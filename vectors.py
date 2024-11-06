@@ -8,25 +8,30 @@ class Vector2d:
 
         self.x=x2-x1
         self.y=y2-y1
+    #длина вектора
     def length(self):
         x=self.x
         y=self.y
         return math.sqrt((x)**2+(y)**2)
+    #Угол между вектором и осью х
     def angle(self):
         x=self.x
         y=self.y
         an=math.degrees(math.atan(abs(x)/abs(y)))
         return an if x>=0 else an+90
+    #Возвращает проекцию результирующего вектора суммы двух векторов
     def summ(self, vec):
         x=self.x
         y=self.y
         res=Vector2d(0,0 ,x+vec.x,y+vec.y)
         return [res.x, res.y]
+    #Возвращает проекцию результирующего вектора разность двух векторов
     def diff(self, vec):
         x=self.x
         y=self.y
         res=Vector2d(0,0 ,x-vec.x,y-vec.y)
         return [res.x, res.y]
+    #Скалярное произведение
     def multiply(self,vec):
         x=self.x
         y=self.y
