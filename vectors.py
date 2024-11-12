@@ -24,13 +24,13 @@ class Vector2d:
         x=self.x
         y=self.y
         res=Vector2d(0,0 ,x+vec.x,y+vec.y)
-        return f'[{res.x}; {res.y}]'
+        return f'({res.x}; {res.y})'
     #Возвращает проекцию результирующего вектора разность двух векторов
     def diff(self, vec):
         x=self.x
         y=self.y
         res=Vector2d(0,0 ,x-vec.x,y-vec.y)
-        return f'[{res.x}; {res.y}]'
+        return f'({res.x}; {res.y})'
     #Скалярное произведение
     def multiply(self,vec):
         x=self.x
