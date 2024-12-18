@@ -16,14 +16,19 @@ def search(t, p):
     if sub_hash == p_hash:
         ind.append(n-m)
     for i in range( n-m):
-        print(n-m-i)
         sub_hash = (sub_hash-deg*ord(t[n-i-1]))*x+ord(t[n-m-i-1])
         if sub_hash == p_hash:
             ind.append(n-m-i-1)
-    return ind
+    return sorted(ind)
     
 
-print(search("asdwawdwawdawda", "w"))
+t = "asdwawdwawdawda"
+p = "wa"
+print("T = " + t)
+print("P = " + p)
+print('Индексы: ')
+print(search(t, p))
+print("\n")
 
 
 #################################################################
@@ -64,6 +69,8 @@ class ColoredPoint:
 
 cp = ColoredPoint(2, 2, "R")
 cp1 = ColoredPoint(2, 2, "R")
+
+print('Равенство экземпляров класса с одикаковыми параметрами')
 print(cp==cp1)
 points={0:cp1,
         1:ColoredPoint(2, 5, "B"),
@@ -73,6 +80,7 @@ points={0:cp1,
         5:cp
         
         }
+print("Хэши экземпляров класса: ")
 print(*[hash(points[_])  for _ in range(6)])    
         
         
